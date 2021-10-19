@@ -7,3 +7,15 @@
     background-color: black;
     color: white;
 }
+
+.champs {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.champs textarea {
+    height: 20vh;
+    width: 20vw;
+}

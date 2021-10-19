@@ -2,6 +2,7 @@ import React from 'react';
 import {Page, Text, View, Document, StyleSheet, Font , PDFViewer} from '@react-pdf/renderer'
 import OpenFont from "./IndieFlower-Regular.ttf"
 import {SketchPicker, CirclePicker} from "react-color"
+import './App.css'
 
 
 Font.register({family : "pdf", src : OpenFont})
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
   },
   flex : {
     display: "flex"
-  }
+  },
 });
 
 // Create Document Component
@@ -118,13 +119,13 @@ export default class App extends React.Component {
 
   render() {
     return(
-      <div style={{display: "flex"}}>
+      <div style={{display: "flex", justifyContent: "center"}}>
         <div className="pdf" style={{display : this.state.affichage}}>
-          <PDFViewer width="900" height="1200">
+          <PDFViewer width="800" height="940">
             <MyDocument color={this.state.borderColor} matiere={this.state.matiere} chapitre={this.state.chapitre} section1name={this.state.section1name} section1={this.state.section1} section2name={this.state.section2name} section2={this.state.section2}/>
           </PDFViewer>
         </div>
-        <div style={styles.section}>
+        <div className="champs" style={styles.section}>
           <center>Fiches de revisions</center>
           <label>Matiere : </label><input type="text" name="" placeholder="Matiere" onChange={this.matiereOnChange}/> <br /><br />
           <label>Chapitre : </label><input type="text" name="" placeholder="Chapitre" onChange={this.chapitreOnChange}/> <br /><br />
